@@ -3,6 +3,7 @@ class Dice
 
     def roll
         @value = rand(5) + 1
-        puts @value 
+        puts "you rolled a #{@value}"
     end
+    
 end
