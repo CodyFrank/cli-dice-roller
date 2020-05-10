@@ -4,7 +4,7 @@ class CommandLineInterface
         self.intro
         input = gets.strip
         if input == "d6"
-            dice = Dice.new
+            dice = D4.new
             dice.roll
         end
     end

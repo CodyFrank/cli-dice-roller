@@ -1,3 +1,9 @@
 require_relative "./command-line-interface.rb"
 require_relative "./dice.rb"
-
+require_relative "./d4.rb"
+require_relative "./d6.rb"
+require_relative "./d8.rb"
+require_relative "./d10.rb"
+require_relative "./d12.rb"
+require_relative "./d20.rb"
+require_relative "./d100.rb"
