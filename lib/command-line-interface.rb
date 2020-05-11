@@ -11,7 +11,7 @@ class CommandLineInterface
         puts "Choose your Weapon! - ('d4', 'd6', d8', 'd10', 'd12', 'd20', or 'd100')"
     end
 
-    def select_dice
+    def select_dice (input)
         case input
             when "d4"
                 dice = D4.new
@@ -36,6 +36,7 @@ class CommandLineInterface
                 dice.roll
             else
                 puts "sorry I dont understand that command please type one of the following ('d4', 'd6', d8', 'd10', 'd12', 'd20', or 'd100')"
+                self.select_dice(gets.strip.downcase)
         end
     end
 end
