@@ -2,15 +2,41 @@ class CommandLineInterface
     def run
         input = nil
         self.intro
-        input = gets.strip
-        if input == "d6"
-            dice = D4.new
-            dice.roll
-        end
+        input = gets.strip.downcase
+        self.select_dice(input)
     end
 
     def intro
         puts "Hello and welcome to Cli Dice Roller"
-        puts "Select what tice you want to roll"
+        puts "Choose your Weapon! - ('d4', 'd6', d8', 'd10', 'd12', 'd20', or 'd100')"
+    end
+
+    def select_dice
+        case input
+            when "d4"
+                dice = D4.new
+                dice.roll
+            when "d6"
+                dice = D6.new
+                dice.roll
+            when "d8"
+                dice = D8.new
+                dice.roll
+            when "d10"
+                dice = D10.new
+                dice.roll
+            when "d12"
+                dice = D12.new
+                dice.roll
+            when "d20"
+                dice = D20.new
+                dice.roll
+            when "d100"
+                dice = D100.new
+                dice.roll
+            else
+                puts "sorry I dont understand that command please type one of the following ('d4', 'd6', d8', 'd10', 'd12', 'd20', or 'd100')"
+        end
     end
 end
+
