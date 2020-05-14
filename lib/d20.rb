@@ -9,4 +9,4 @@ class D20 < Dice
             puts "you rolled a #{@value} on the d20"
         end
     end
-end 
+end
