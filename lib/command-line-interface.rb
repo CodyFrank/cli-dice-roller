@@ -1,10 +1,12 @@
 require "pry"
 class CommandLineInterface
     def run
-        input = nil
-        self.intro
-        input = gets.strip.downcase
-        self.select_dice(input)
+        until complete? == true
+            input = nil
+            self.intro
+            input = gets.strip.downcase
+            self.select_dice(input)
+        end
     end
 
     def intro
@@ -12,13 +14,16 @@ class CommandLineInterface
         puts "Choose your Weapon! - ('d4', 'd6', d8', 'd10', 'd12', 'd20', or 'd100')"
     end
 
-    def complete
-        puts "Would you like to roll another dice?"
+    def complete?
+        puts "Done playing? (y, n)"
         input = gets.strip.downcase
         if input == "n"
-            return true
-        elsif input == "y"
             return false
+        elsif input == "y"
+            return true
+        else
+            puts "I don't unterstande your response please answer 'y' or 'n'"
+            return complete?
         end
     end
 
