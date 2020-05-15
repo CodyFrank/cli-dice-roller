@@ -1,3 +1,4 @@
+require "pry"
 class CommandLineInterface
     def run
         input = nil
@@ -9,6 +10,16 @@ class CommandLineInterface
     def intro
         puts "Hello and welcome to Cli Dice Roller"
         puts "Choose your Weapon! - ('d4', 'd6', d8', 'd10', 'd12', 'd20', or 'd100')"
+    end
+
+    def complete
+        puts "Would you like to roll another dice?"
+        input = gets.strip.downcase
+        if input == "n"
+            return true
+        elsif input == "y"
+            return false
+        end
     end
 
     def select_dice (input)
@@ -40,4 +51,3 @@ class CommandLineInterface
         end
     end
 end
-
