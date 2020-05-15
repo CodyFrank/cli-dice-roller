@@ -1,11 +1,14 @@
 require "pry"
 class CommandLineInterface
     def run
-        until complete? == true
-            input = nil
-            self.intro
-            input = gets.strip.downcase
-            self.select_dice(input)
+        input = nil
+        self.intro
+        input = gets.strip.downcase
+        self.select_dice(input)
+        if complete? == true
+            return
+        else
+            return run
         end
     end
 
